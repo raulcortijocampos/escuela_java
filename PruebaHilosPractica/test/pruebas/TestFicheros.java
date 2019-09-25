@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 public class TestFicheros {
 
 
+<<<<<<< HEAD
     // @Test
     public void generacionFicheroAleatorio() {
         HiloFichero hf = new HiloFichStrAux1();
@@ -33,6 +34,17 @@ public class TestFicheros {
 //
 //    }
     
+=======
+    @Test
+    public void lecturaFicheroAleatorio() {
+        HiloFichero hf1 = new HiloFichStrAux1();
+        HiloFichero hf2 = new HiloFichStrAux2();
+        HiloFichero hf3 = new HiloFichStrAux3();
+        hf1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf2.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf3.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+
+    }
     public class Metodo1 extends Thread {
 
         @Override
@@ -40,6 +52,9 @@ public class TestFicheros {
             //super.run(); //To change body of generated methods, choose Tools | Templates.
             HiloFichero hf1 = new HiloFichStrAux1();
             hf1.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+
+
+            hf1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
 
         }
 
@@ -67,7 +82,7 @@ public class TestFicheros {
 
     }
 
-    @Test
+    //@Test
     public void probando() {
 
         Metodo1 mt1 = new Metodo1();
