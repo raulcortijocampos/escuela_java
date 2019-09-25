@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var valor1 = new Object();
+            var valor2 = {
+                "dni":"123456789-L",
+                "nombre": "Lorena",
+                "nacimiento": new Date()
+            }; //Nomenclatura JSON
+            
+            var persona = new Object();
+            persona.dni = "01234567-P";
+            persona.nombre = "El Brayan";
+            persona.edad = 32;
+            persona.nacimiento = new Date();
+           /* alert("Info persona: " + persona.nombre + "\n Edad: "+ persona.edad
+                    + "\n Nacimiento: "+ persona.nacimiento)*/
+           /* alert("Info persona: " + valor2.nombre + "\n Edad: "+ valor2.edad
+                    + "\n Nacimiento: "+ valor2["nacimiento"])*/
+            valor2["apellidos"] = "Garcia Sanchez";
+            var lala="apellidos";
+            alert("Info persona: " + valor2.nombre + "\n Edad: "+ valor2.edad
+                    + "\n apellidos: "+ valor2[lala])
+            
+            
+            
+        </script>
+    </body>
+</html>

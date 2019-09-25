@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Calculadora</div></br>
+        <input id="cajaNum1" type="number" name="num1"/>
+        <input id="cajaNum2" type="number" name="num2"/>
+        </br>
+        <input type="button" id="botonSumar" value="SUMAR" onclick="sumar()"/>
+        <input type="button" id="botonRestar" value="RESTAR" onclick="restar()"/>
+        </br>
+        <!--<input type="button" id="botonResultado" value="VER RESULTADO" onclick="pulsar()"/> -->
+        <!--<input id="cajaResultado" name="num2"/>-->
+        
+        
+        <script>
+            let cajaNum1 = document.getElementById("cajaNum1");
+            let cajaNum2 = document.getElementById("cajaNum2");
+            
+            
+            function sumar(){
+                let resultado = parseInt(cajaNum1.value) + parseInt(cajaNum2.value);
+                document.write("<h2>El resultado es " + resultado + "</h2>")
+            }
+            function restar(){
+                let resultado = parseInt(cajaNum1.value) - parseInt(cajaNum2.value);
+                document.write("<h2>El resultado es " + resultado + "</h2>")
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-package clasesjava;
+package pruebahilospractica;
 /**
  * @author Raul 
  */

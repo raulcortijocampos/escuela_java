@@ -1,12 +1,18 @@
-package clasesjava;
+package pruebahilospractica;
+
+
+
 /**
  * @author Raul 
  */
-public class StringAux {
+public class StringAuxHilos {
     
     private String string;
-
-    public StringAux(String string) {
+    
+    public StringAuxHilos() {
+        
+    }
+    public StringAuxHilos(String string) {
         this.string = string;
     }
     public String getString() {
@@ -36,7 +42,7 @@ public class StringAux {
         }
         return result;
     }
-    public static String  quitarEspSobrantesV2(String texto) {
+    public static String quitarEspSobrantesV2(String texto) {
         texto = texto.trim();
         String[] palabras = texto.split(" ");
         String result = "";

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .botones{
+                background-color:cyan;
+                font-weight: bolder;
+                width: 50px;
+                height: 50px;
+            }
+            .botonesRojos{
+                background-color:red;
+                font-weight: bolder;
+                width: 50px;
+                height: 50px;
+            }
+            .botonesAmarillo{
+                background-color:yellow;
+                font-weight: bolder;
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Calculadora</div></br>
+        <h3>
+            Operacion:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Resultado:
+        </h3>
+        <input id="cajaNum" name="num" readonly/>
+        <input id="cajaRes" name="res" readonly/>
+        </br>
+        </br>
+        <input class="botones" type="button" id="1" value="1" onclick="poner(1)"/>
+        <input class="botones" type="button" id="2" value="2" onclick="poner(2)"/>
+        <input class="botones" type="button" id="3" value="3" onclick="poner(3)"/>
+        <input class="botonesRojos" type="button" id="suma" value="+" onclick="poner('+')"/>
+        
+        </br>
+        <input class="botones" type="button" id="4" value="4" onclick="poner(4)"/>
+        <input class="botones" type="button" id="5" value="5" onclick="poner(5)"/>
+        <input class="botones" type="button" id="6" value="6" onclick="poner(6)"/>
+        <input class="botonesRojos" type="button" id="resta" value="-" onclick="poner('-')"/>
+        </br>
+        <input class="botones" type="button" id="7" value="7" onclick="poner(7)"/>
+        <input class="botones" type="button" id="8" value="8" onclick="poner(8)"/>
+        <input class="botones" type="button" id="9" value="9" onclick="poner(9)"/>
+        <input class="botonesRojos" type="button" id="multi" value="*" onclick="poner('*')"/>
+        </br>
+        <input class="botones" type="button" id="0" value="0" onclick="poner(0)"/>
+       <input class="botonesAmarillo" type="button" id="botonIgual" value="=" onclick="igual()"/>
+       <input class="botonesRojos" type="button" id="botonLimpiar" value="C" onclick="limpiar()"/>
+        <input class="botonesRojos" type="button" id="div" value="/" onclick="poner('/')"/>
+        </br>
+        </br>
+        
+        
+        
+        </br>
+        <!--<input type="button" id="botonResultado" value="VER RESULTADO" onclick="pulsar()"/> -->
+        <!--<input id="cajaResultado" name="num2"/>-->
+        
+        <script src="jquery-3.4.1.js"></script>
+        <script>
+           // window.onload = function(){
+                
+                let cajaNum = document.getElementById("cajaNum");
+                //let cajaRes = document.getElementById("cajaRes");
+                let cajaRes = $("#cajaRes");
+               
+                let num1,num2;
+               // let num1,num2;
+           // };
+            
+            function poner(p){
+                cajaNum.value=cajaNum.value + p;
+            }
+            function limpiar(){
+                cajaNum.value="";
+                cajaRes.val("");
+            }
+            function igual(){
+                if(cajaNum.value.includes('+')){
+                      num1= cajaNum.value.substring(0, (cajaNum.value.indexOf('+')));
+                      num2= cajaNum.value.substring((cajaNum.value.indexOf('+')+1),cajaNum.length);
+                      cajaRes.val(cajaNum.value + " = " + (parseInt(num1) + parseInt(num2)));
+                      
+                }else{
+                    if(cajaNum.value.includes('-')){
+                        num1= cajaNum.value.substring(0, (cajaNum.value.indexOf('-')));
+                        num2= cajaNum.value.substring((cajaNum.value.indexOf('-')+1),cajaNum.length);
+                        cajaRes.val(cajaNum.value + " = " + (parseInt(num1) - parseInt(num2)));
+                    }else{
+                        if(cajaNum.value.includes('*')){
+                            num1= cajaNum.value.substring(0, (cajaNum.value.indexOf('*')));
+                            num2= cajaNum.value.substring((cajaNum.value.indexOf('*')+1),cajaNum.length);
+                            cajaRes.val(cajaNum.value + " = " + (parseInt(num1) * parseInt(num2)));
+                        }else{
+                            num1= cajaNum.value.substring(0, (cajaNum.value.indexOf('/')));
+                            num2= cajaNum.value.substring((cajaNum.value.indexOf('/')+1),cajaNum.length);
+                            cajaRes.val(cajaNum.value + " = " + (parseInt(num1) / parseInt(num2)));
+                        }
+                    }
+                }
+                cajaNum.value="";
+            }
+        </script>
+    </body>
+</html>

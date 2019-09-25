@@ -1,4 +1,4 @@
-package ejemplojava;
+package POO;
 /**
  * @author Raul 
  */
@@ -9,6 +9,10 @@ public class CocheRally extends Coche {
     public CocheRally(String marca, TipoCarburante carburante, TipoColor color, float roz){
         super(marca, carburante, color); //SE INVOCA AL CONSTRUCTOR PADRE
         this.rozamiento = roz;
+    }
+   public CocheRally(String marca){
+        super(marca); //SE INVOCA AL CONSTRUCTOR PADRE
+        this.rozamiento = 3.14f;
     }
     //Sobre carga de constructor
     public CocheRally(String marca, TipoCarburante carburante, String color, float roz){

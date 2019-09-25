@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Funciones JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            function miFuncion(arg1, arg2){
+                document.write("<p> Arg 1 " + arg1 + "</p>");
+                document.write("<p> Arg 2 " + arg2 + "</p>");
+                //variable llamada arguments
+                if(arguments.length > 2){
+                    document.write("<h2>Tercer arg: " + arguments[2] + "</h2>");
+                    if(arguments.length > 3){
+                    for(arg in arguments)
+                        document.write("<h2>Con indice: " + arguments[arg] + "</h2>");
+                    for(arg of arguments) //es como el for each
+                        document.write("<h2>Con for each: " + arg + "</h2>");
+                }
+            }
+        }
+          //  miFuncion("Argumento texto", 2000);
+          //  miFuncion(new Object(), false);
+          //  miFuncion("Muchos",100,null,"argumentos", "otruu ", "otro2");
+            
+            var otraFuncion = function(veces){
+                for (var i = 0; i < veces; i++)
+                    document.write("<h2>Vez: " + i + "</h2>");
+            };
+            otraFuncion.puesSi = "Es un objeto";
+            otraFuncion(3);
+            document.write("<p>Valor: " + otraFuncion.puesSi + "</p");
+            var noTipica = new Function("x","y","var r = x + y ; return r ");
+            document.write("<p> 2 + 2 = " + noTipica(2,2) + "</p>");
+            document.write(miFuncion.toString());
+            /*
+            Object.prototype.toString = function() {
+                return "sustituido"
+            };
+            document.write(miFuncion.toString())
+            */
+           Function.funcionEstatica = function() {
+                return "sustituido"
+            };
+            Function.funcionEstatica();
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

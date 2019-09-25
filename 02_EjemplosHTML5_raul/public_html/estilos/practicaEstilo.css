@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-sep-2019, 11:36:17
+    Author     : student
+*/
+body{
+    text-align: center;
+    background-image: url("http://maxpeed.com/wp-content/uploads/2013/07/fondo-claro.jpg"); 
+}
+
+.letra-roja{
+    color: red;
+}
+.letra-verde{
+    font-size: 28px;
+    color: green;
+}
+.letra-negrita{
+    font-weight: bold;
+}
+
+#nav1{
+    font-size: 30px;
+}
+
+article > p:hover{ 
+    font-size: 40px;
+    background-color: yellow;
+}
+
+
+

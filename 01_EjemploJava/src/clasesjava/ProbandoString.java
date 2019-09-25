@@ -30,7 +30,7 @@ public class ProbandoString {
         
         int cont=0;
         String nuevoTexto="";
-        
+        texto3.trim();
             for (int i=0; i < texto3.length(); i++) {
                 if (texto3.charAt(i) != ' '){
                   nuevoTexto = nuevoTexto + texto3.charAt(i);

@@ -1,6 +1,9 @@
 
 package ejemplojava;
 
+import POO.Coche;
+import POO.CocheRally;
+import POO.TipoCarburante;
 import clasesjava.ProbandoString;
 
 
@@ -49,7 +52,7 @@ public class Main {
         miSupra.mostrar();
         
         Coche supraNormal = miSupra;   //Conversion implicita
-        supraNormal.explosionCilindro();
+        //supraNormal.explosionCilindro();
        // supraNormal.derrapar();
         supraNormal.acelerar();
         supraNormal.mostrar();
