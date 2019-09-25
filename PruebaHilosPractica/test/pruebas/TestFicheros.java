@@ -16,21 +16,14 @@ public class TestFicheros {
     public TestFicheros() {
     }
 
-    // @Test
-    public void generacionFicheroAleatorio() {
-        HiloFichero hf = new HiloFichStrAux1();
-        hf.crearFicheroEjemp("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploJava\\texto_esp.txt");
-
-    }
-
     @Test
     public void lecturaFicheroAleatorio() {
         HiloFichero hf1 = new HiloFichStrAux1();
         HiloFichero hf2 = new HiloFichStrAux2();
         HiloFichero hf3 = new HiloFichStrAux3();
-        hf1.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-        hf2.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-        hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf2.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf3.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
 
     }
 
@@ -41,13 +34,13 @@ public class TestFicheros {
             //super.run(); //To change body of generated methods, choose Tools | Templates.
             HiloFichero hf1 = new HiloFichStrAux1();
 
-            hf1.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+            hf1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
 
         }
 
     }
 
-    @Test
+    //@Test
     public void probando() {
 
         Metodo1 mt1 = new Metodo1();
