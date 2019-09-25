@@ -12,9 +12,6 @@ import static org.junit.Assert.*;
  * @author student
  */
 public class TestFicheros {
-
-
-<<<<<<< HEAD
     // @Test
     public void generacionFicheroAleatorio() {
         HiloFichero hf = new HiloFichStrAux1();
@@ -33,9 +30,7 @@ public class TestFicheros {
 //        hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
 //
 //    }
-    
-=======
-    @Test
+    //@Test
     public void lecturaFicheroAleatorio() {
         HiloFichero hf1 = new HiloFichStrAux1();
         HiloFichero hf2 = new HiloFichStrAux2();
@@ -45,17 +40,14 @@ public class TestFicheros {
         hf3.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
 
     }
+    
     public class Metodo1 extends Thread {
 
         @Override
         public void run() {
             //super.run(); //To change body of generated methods, choose Tools | Templates.
-            HiloFichero hf1 = new HiloFichStrAux1();
-            hf1.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-
-
-            hf1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
-
+            HiloFichStrAux1.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+            System.out.println("lalu1");
         }
 
     }
@@ -64,27 +56,24 @@ public class TestFicheros {
         @Override
         public void run() {
             //super.run(); //To change body of generated methods, choose Tools | Templates.
-            HiloFichero hf2 = new HiloFichStrAux2();
-            hf2.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-
+            HiloFichStrAux2.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+            System.out.println("lalu2");
         }
 
     }
     public class Metodo3 extends Thread {
-
         @Override
         public void run() {
-            //super.run(); //To change body of generated methods, choose Tools | Templates.
-            HiloFichero hf3 = new HiloFichStrAux3();
-            hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+            super.run(); //To change body of generated methods, choose Tools | Templates.
+            HiloFichStrAux3.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+            System.out.println("lalu3");
 
         }
 
     }
 
-    //@Test
+    @Test
     public void probando() {
-
         Metodo1 mt1 = new Metodo1();
         mt1.start();
         Metodo2 mt2 = new Metodo2();

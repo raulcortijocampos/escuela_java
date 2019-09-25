@@ -40,15 +40,7 @@ public class TestEjemploHijos {
     public void probandoClasesConNombre() {
         ProcesoA proA = new ProcesoA();
         ProcesoB proB = new ProcesoB();
-//        
-//        @Override
-//        public void run() {
-//        
-//          for(int i=0; i<200; i++){
-//                System.out.println("Proceso B: " + i);
-//            }
-//        }
-        
+
         
         proA.start();
         proB.start();
