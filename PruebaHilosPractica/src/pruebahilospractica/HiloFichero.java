@@ -68,7 +68,7 @@ public class HiloFichero {
             escaner = new Scanner(fich);
             while(escaner.hasNextLine()){
                 String linea = escaner.nextLine();
-                System.out.println(linea);
+                //System.out.println(linea);
                 StringAux strAux = new StringAux(linea);
                 System.out.println(strAux.quitarEspSobrantes());
             }
