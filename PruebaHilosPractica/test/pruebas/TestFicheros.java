@@ -1,5 +1,6 @@
 package pruebas;
 
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pruebahilospractica.HiloFichStrAux1;
@@ -15,8 +16,6 @@ import static org.junit.Assert.*;
  */
 public class TestFicheros {
 
-
-
     // @Test
     public void generacionFicheroAleatorio() {
         HiloFichero hf = new HiloFichStrAux1();
@@ -24,7 +23,6 @@ public class TestFicheros {
 
     }
 
-    
     //MEDIANTE METODOS
 //    public void lecturaFicheroAleatorio() {
 //        HiloFichero hf1 = new HiloFichStrAux1();
@@ -35,7 +33,6 @@ public class TestFicheros {
 //        hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
 //
 //    }
-    
     //@Test
     public void lecturaFicheroAleatorio() {
         HiloFichero hf1 = new HiloFichStrAux1();
@@ -46,6 +43,7 @@ public class TestFicheros {
         hf3.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
 
     }
+
     public class Metodo1 extends Thread {
 
         @Override
@@ -56,17 +54,24 @@ public class TestFicheros {
         }
 
     }
-    public class Metodo2 extends Thread {
 
+    public class Metodo2 extends Thread {
+        
         @Override
         public void run() {
             //super.run();
+            double mili = new Date().getTime();
             HiloFichStrAux2.leerFicheroEjem("..\\PruebaHilosPractica\\ficheroALeer.txt");
+            double mili2 = new Date().getTime();
+            System.out.println("Tiempo de ejecucion: " + (mili2 - mili) );
 
         }
-
+        
+        
     }
+
     public class Metodo3 extends Thread {
+
 
         @Override
         public void run() {
@@ -81,13 +86,13 @@ public class TestFicheros {
     public void probando() {
 
         Metodo1 mt1 = new Metodo1();
-        Metodo2 mt2 = new Metodo2(); 
+        Metodo2 mt2 = new Metodo2();
         Metodo3 mt3 = new Metodo3();
-        
+
         mt1.start();
         mt2.start();
         mt3.start();
-        
+
         try {
             mt1.join();
             mt2.join();
@@ -95,6 +100,6 @@ public class TestFicheros {
         } catch (InterruptedException ex) {
             Logger.getLogger(TestEjemploHijos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 }
