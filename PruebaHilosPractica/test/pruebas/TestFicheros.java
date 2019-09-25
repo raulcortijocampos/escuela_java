@@ -88,7 +88,7 @@ public class TestFicheros {
     }
 
     public class Metodo3 extends Thread {
-
+        @Override
         public void run() {
             long TInicio3, TFin3, tiempo3; 
             TInicio3 = System.currentTimeMillis(); 
