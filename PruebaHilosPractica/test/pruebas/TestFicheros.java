@@ -23,13 +23,15 @@ public class TestFicheros {
 
      }
     @Test
+    //MEDIANTE METODOS
     public void lecturaFicheroAleatorio(){
         HiloFichero hf1 = new HiloFichStrAux1();
-        //HiloFichero hf2 = new HiloFichStrAux2();
-      //  HiloFichero hf3 = new HiloFichStrAux3();
+        HiloFichero hf2 = new HiloFichStrAux2();
+        HiloFichero hf3 = new HiloFichStrAux3();
         hf1.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-      //  hf2.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-      //  hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
-
+        hf2.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+        hf3.leerFicheroEjem("C:\\Users\\student\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\PruebaHilosPractica\\ficheroALeer.txt");
+        
+        Date
     }
 }
