@@ -33,6 +33,8 @@ public class ServicioPersona {
                 throw new IllegalArgumentException("El password esta vacio");
             }else if(email.equals("")){   
                 throw new IllegalArgumentException("El email esta vacio");
+            }else if(!email.contains("@") ||!email.contains(".")){   
+                throw new IllegalArgumentException("Dirección email no válida");
             }else if(nombre.length() < 2){
                 throw new IllegalArgumentException("El nombre es demasiado corto");
             }else if(edad.equals("")){

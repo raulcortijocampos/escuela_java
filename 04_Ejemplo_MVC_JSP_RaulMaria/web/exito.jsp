@@ -15,7 +15,11 @@
         <h1>Exito - registro guardado</h1>
         <label for="nombre">Nombre: </label>
         <input readonly value="<%= request.getParameter("nombre") %>"/>
-        <label for="edad">Nombre: </label>
+        <label for="edad">Edad: </label>
         <input readonly value="<%= request.getParameter("edad") %>"/>
+        <label for="email">Email: </label>
+        <input readonly value="<%= request.getParameter("email") %>"/>
+        <label for="password">Password: </label>
+        <input readonly value="<%= request.getParameter("password") %>"/>
     </body>
 </html>
