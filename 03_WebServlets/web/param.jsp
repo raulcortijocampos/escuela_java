@@ -4,14 +4,10 @@
     Author     : student
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="head.jsp" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Datos introducidos</title>
-        <link rel="stylesheet" href="./estilos/estilos.jsp"/>
-    </head>
+    <%=head("Parametros") %>
     <body>
         <%@include file="header.jsp" %>
         <h1>Datos</h1>
