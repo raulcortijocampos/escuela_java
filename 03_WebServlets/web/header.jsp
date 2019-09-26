@@ -10,7 +10,8 @@
     <h1>Proyecto 03_WebServlets</h1>
 </header>
 <nav>
+    <div class="menu-principal"><a href="./">Inicio</a>                     </div>
     <div class="menu-principal"><a href="./hola">Hola servlet</a>           </div>
     <div class="menu-principal"><a href="./param">ServletParam</a>          </div>
-    <div class="menu-principal"><a href="./registro.html">Form registro</a> </div>
+    <div class="menu-principal"><a href="./registro.jsp">Form registro</a> </div>
 </nav>
