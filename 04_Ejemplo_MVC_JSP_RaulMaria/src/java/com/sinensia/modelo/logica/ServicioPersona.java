@@ -24,11 +24,15 @@ public class ServicioPersona {
     
     private ArrayList<Persona> personas;
     
-    public Persona addPersonas(String nombre, String edad)
+    public Persona addPersonas(String nombre, String edad, String email, String password)
             throws NumberFormatException, IOException, IllegalArgumentException{
             
             if(nombre.equals("")){
                 throw new IllegalArgumentException("El nombre esta vacio");
+            }else if(password.equals("")){   
+                throw new IllegalArgumentException("El password esta vacio");
+            }else if(email.equals("")){   
+                throw new IllegalArgumentException("El email esta vacio");
             }else if(nombre.length() < 2){
                 throw new IllegalArgumentException("El nombre es demasiado corto");
             }else if(edad.equals("")){
@@ -38,7 +42,7 @@ public class ServicioPersona {
                 if (intEdad <= 12) {
                     throw new IllegalArgumentException("La edad debe ser mayor que 12");
                 }else{
-                    Persona p = new Persona(nombre, intEdad);
+                    Persona p = new Persona(nombre, intEdad, email, password);
                     personas.add(p);
                     return p;
                 }
