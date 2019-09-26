@@ -1,6 +1,7 @@
 package com.sinensia.modelo.logica;
 
 import com.sinensia.modelo.Persona;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /** Singleton porque solo queremos un servicio por aplicacion/servidor
@@ -23,17 +24,28 @@ public class ServicioPersona {
     
     private ArrayList<Persona> personas;
     
-    public void addPersonas(String nombre, String edad){
-//        try {
-            int intEdad = Integer.parseInt(edad);
-            if (intEdad > 12 && !nombre.equals("")) {
-                Persona p = new Persona(nombre, intEdad);
-                personas.add(p);
+    public Persona addPersonas(String nombre, String edad)
+            throws NumberFormatException, IOException, IllegalArgumentException{
+            
+            if(nombre.equals("")){
+                throw new IllegalArgumentException("El nombre esta vacio");
+            }else if(nombre.length() < 2){
+                throw new IllegalArgumentException("El nombre es demasiado corto");
+            }else if(edad.equals("")){
+                throw new NumberFormatException("La edad esta vacia");
+            }else{
+                int intEdad = Integer.parseInt(edad);
+                if (intEdad <= 12) {
+                    throw new IllegalArgumentException("La edad debe ser mayor que 12");
+                }else{
+                    Persona p = new Persona(nombre, intEdad);
+                    personas.add(p);
+                    return p;
+                }
             }
-//        } catch (NumberFormatException numberFormatException) {
-//        }
-    }
-    public Persona getPersona(String nombre){
+          }
+            
+     public Persona getPersona(String nombre){
         for(Persona p : personas){
             if(p.getNombre().equalsIgnoreCase(nombre)){
                 return p;
