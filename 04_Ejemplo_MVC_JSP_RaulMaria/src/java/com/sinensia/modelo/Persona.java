@@ -8,10 +8,14 @@ public class Persona {
 
     private String nombre;
     private int edad;
+    private String email; 
+    private String password; 
 
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre, int edad,String email,String password) {
         this.nombre = nombre;
         this.edad = edad;
+        this.email=email; 
+        this.password=password; 
     }
     
     
@@ -30,5 +34,22 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    
 
 }
