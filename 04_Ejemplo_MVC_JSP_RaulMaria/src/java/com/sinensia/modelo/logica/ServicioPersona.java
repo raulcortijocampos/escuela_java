@@ -50,23 +50,20 @@ public class ServicioPersona {
                 }
             }
           }
-    public Persona modificarPersona(String nuevoNombre,String nuevaEdad,String nuevoEmail,String nuevoPassword, String viejoNombre){
+    public void modificarPersona(String nuevoNombre,String nuevaEdad,String nuevoEmail,String nuevoPassword, String viejoNombre){
         Persona p = getPersona(viejoNombre);
         if(!nuevoNombre.equals(viejoNombre)){
-           // p.setNombre(nuevoNombre);
-            Persona p2 = personas.get(personas.indexOf(p));
-                    p2.setNombre(nuevoNombre);
-        }else if(p.getEdad() != Integer.parseInt(nuevaEdad)){
-            //p.setEdad(Integer.parseInt(nuevaEdad));
+            personas.get(personas.indexOf(p)).setNombre(nuevoNombre);
+                    
+        }if(p.getEdad() != Integer.parseInt(nuevaEdad)){
             personas.get(personas.indexOf(p)).setEdad(Integer.parseInt(nuevaEdad));
-        }else if(!p.getEmail().equals(nuevoEmail) ){
-            //p.setEmail(nuevoEmail);
+        
+        }if(!p.getEmail().equals(nuevoEmail) ){
             personas.get(personas.indexOf(p)).setEmail(nuevoEmail);
-        }else if(!p.getPassword().equals(nuevoPassword)){
-            p.setPassword(nuevoPassword);
-            personas.get(personas.indexOf(p)).setNombre(nuevoPassword);
+       
+        }if(!p.getPassword().equals(nuevoPassword)){
+            personas.get(personas.indexOf(p)).setPassword(nuevoPassword);
         }
-        return p;
     }
             
      public Persona getPersona(String nombre){
