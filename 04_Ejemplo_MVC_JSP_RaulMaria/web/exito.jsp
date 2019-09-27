@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Exito - registro guardado</title>
+        <link rel="stylesheet" type="text/css" href="estilo/estilo.jsp"/>
     </head>
     <body>
        
@@ -25,10 +26,10 @@
                 <input readonly value="<%= request.getParameter("email") %>"/>
                 <label for="password">Password: </label>
                 <input readonly value="<%= request.getParameter("password") %>"/>
-                <a href="./"> volver al inicio </a>
+                 <a class="volver" href="./"> volver al inicio </a>
         <% }else if("borrar".equals(lala)) { %>
                  <h1>Exito - Borrado <% request.getParameter("nombreABorrar");  %></h1>
-                 <a href="./"> volver al inicio </a>
+                 <a class="volver" href="./"> volver al inicio </a>
         <% } %>
     </body>
 </html>

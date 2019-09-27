@@ -10,11 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./estilo/estilo.jsp"/> 
        <title>Ejemplo MVC con JSP y Servlets</title>
     </head>
     <body>
         <h1>Ejemplo MVC con JSP y Servlets</h1>
-        <h2>Usuario</h2>
+        <h2 class="color">Usuario</h2>
         <% Persona pers = (Persona) session.getAttribute("resultadoBusq"); %>
         <% if(pers != null){ %>
             <label for="nombre">Nombre: </label>
@@ -25,12 +26,12 @@
             <input id="email" readonly value="<%= pers.getEmail() %>"/>
             <label for="password">Password: </label>
             <input id="password" readonly value="<%= pers.getPassword()%>"/>
-            <a href="./"> volver al inicio </a>
+            <a class="volver" href="./"> volver al inicio </a>
         <% }else{ %>
             <span style="color: red">
                 No se han encontrado personas
             </span>
-            <a href="./"> volver al inicio </a>
+            <a class="volver" href="./"> volver al inicio </a>
          <% }%>
         
     </body>
