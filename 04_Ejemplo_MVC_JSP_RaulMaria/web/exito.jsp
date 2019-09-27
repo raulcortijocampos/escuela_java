@@ -12,14 +12,21 @@
         <title>Exito - registro guardado</title>
     </head>
     <body>
-        <h1>Exito - registro guardado</h1>
-        <label for="nombre">Nombre: </label>
-        <input readonly value="<%= request.getParameter("nombre") %>"/>
-        <label for="edad">Edad: </label>
-        <input readonly value="<%= request.getParameter("edad") %>"/>
-        <label for="email">Email: </label>
-        <input readonly value="<%= request.getParameter("email") %>"/>
-        <label for="password">Password: </label>
-        <input readonly value="<%= request.getParameter("password") %>"/>
+       
+        <% 
+            String lala = (String) request.getAttribute("vieneDe");
+            if ("add".equals(lala)) {%>
+                <h1>Exito - registro guardado</h1>
+                <label for="nombre">Nombre: </label>
+                <input readonly value="<%= request.getParameter("nombre") %>"/>
+                <label for="edad">Edad: </label>
+                <input readonly value="<%= request.getParameter("edad") %>"/>
+                <label for="email">Email: </label>
+                <input readonly value="<%= request.getParameter("email") %>"/>
+                <label for="password">Password: </label>
+                <input readonly value="<%= request.getParameter("password") %>"/>
+        <% }else if("borrar".equals(lala)) { %>
+                 <h1>Exito - Borrado <% request.getParameter("nombre");  %></h1>
+        <% } %>
     </body>
 </html>

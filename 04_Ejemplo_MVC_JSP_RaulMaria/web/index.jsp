@@ -55,5 +55,29 @@
             <input type='submit' value='Enviar'/>
             <input type='hidden' name="queHacer" id="queHacer" value='irAModificar'/>
         </form>
+        
+        <h2>Borrar Persona</h2>
+        <form name='formBorr' method='post' action='./personas.do'> <!--metodo get-->
+            <table border='1'>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type='text' name='nAntiguo' id='nAntiguo'/></td>
+                </tr>
+            </table>
+            <input type='submit' value='Borrar' onclick="poner()"/>
+            <input type='hidden' name="nombreABorrar" id="nombreABorrar" />
+            <input type='hidden' name="queHacer" id="queHacer" value='borrar'/>
+        </form>
+    <script>
+         let cajaNum1 = document.getElementById("nAntiguo");
+         let campoNombre=document.getElementById("nombreABorrar");
+         
+    function poner(){
+        let cajaNum1 = document.getElementById("nAntiguo");
+         let campoNombre=document.getElementById("nombreABorrar");
+         campoNombre.value=cajaNum1.value;
+    }
+    </script>
     </body>
+    
 </html>

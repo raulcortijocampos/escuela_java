@@ -65,7 +65,7 @@ public class ServicioPersona {
             personas.get(personas.indexOf(p)).setPassword(nuevoPassword);
         }
     }
-            
+          
      public Persona getPersona(String nombre){
         for(Persona p : personas){
             if(p.getNombre().equalsIgnoreCase(nombre)){
@@ -74,4 +74,16 @@ public class ServicioPersona {
         }
         return null;
     }
+      public void borrarPersona(String nombre){
+         Persona pBorrar = null;
+         
+         for(Persona p : personas){
+            if(p.getNombre().equalsIgnoreCase(nombre)){
+               pBorrar=p;
+               //pBorrar = personas.remove(getPersona(nombre));
+            }
+            
+        }
+         personas.remove(pBorrar);
+     } 
 }

@@ -46,11 +46,11 @@ public class ControladorPersonasServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
+        String nombreABorrar = request.getParameter("nombreABorrar");
         String edad = request.getParameter("edad");
         String email = request.getParameter("email"); 
         String password = request.getParameter("password"); 
         String metodo = request.getParameter("queHacer");
-        String viejoNombre = request.getParameter("viejoNombre");
         String nuevoNombre = request.getParameter("nuevoNombre");
         String nuevoEdad = request.getParameter("nuevoEdad");
         String nuevoEmail = request.getParameter("nuevoEmail"); 
@@ -62,6 +62,7 @@ public class ControladorPersonasServlet extends HttpServlet {
                 if ( p == null){
                     request.getRequestDispatcher("error.jsp").forward(request, response);
                 }else{
+                    request.setAttribute("vieneDe", "add");
                     request.getRequestDispatcher("exito.jsp").forward(request, response);
                 }
             }catch(NumberFormatException ex){
@@ -74,11 +75,23 @@ public class ControladorPersonasServlet extends HttpServlet {
                 request.getSession().setAttribute("mensajeError","Error generico: "+ ex.getMessage());
                 request.getRequestDispatcher("error.jsp").forward(request, response);
             }
+            ;
         }else if(metodo.equals("cambiar")){
             try{
                
                ServicioPersona.getInstancia().modificarPersona(nuevoNombre,nuevoEdad,nuevoEmail,nuevoPassword,nombre);
             }catch(Exception w){}
+        }else if(metodo.equals("borrar")){
+            try{
+               
+               ServicioPersona.getInstancia().borrarPersona(nombreABorrar);
+               request.setAttribute("vieneDe", "borrar");
+               request.getRequestDispatcher("exito.jsp").forward(request, response);
+            }catch(Exception w){
+                // TODO: Terminar con rquest.setAtt...()
+                request.getSession().setAttribute("mensajeError","Error generico: "+ w.getMessage());
+                request.getRequestDispatcher("error.jsp").forward(request, response);
+            }
         }
     }
 
