@@ -31,7 +31,7 @@
             </span>
          <% }%>
          
-        <form name='form1' method='post' action='./exito.jsp'>
+        <form name='formCambiar' method='post' action='./personas.do'>
             <table border='1'>
                 <tr>
                     <td>Nuevo nombre</td>
@@ -51,7 +51,9 @@
                 </tr>
             </table>
             <input type='submit' value='Cambiar'/>
-            <input type='hidden' name="queHacer" id="queHacer" value="cambiar"/>
+            <input type='hidden' name="nombre" id="nombre" value="<%= pers.getNombre() %>"/>
+            <input type='hidden' name="queHacer" id="queHacer" value='cambiar'/>
+            
         </form>
     </body>
 </html>

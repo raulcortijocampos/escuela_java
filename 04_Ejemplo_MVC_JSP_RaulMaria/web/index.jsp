@@ -13,19 +13,19 @@
             <table border='1'>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type='text' name='nombre' id='nombre'/></td>
+                    <td><input type='text' name='nombre' id='nombre' value='lala'/></td>
                 </tr>
                 <tr>
                     <td>Edad</td>
-                    <td> <input type='number' name='edad' id='edad'/></td>
+                    <td> <input type='number' name='edad' id='edad' value='23'/></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input type='text' name='email' id='email'/></td>
+                    <td><input type='text' name='email' id='email' value="@."/></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type='password' name='password' id='password'/></td>
+                    <td><input type='password' name='password' id='password' value='1234'/></td>
                 </tr>
             </table>
             <input type='submit' value='Enviar'/>

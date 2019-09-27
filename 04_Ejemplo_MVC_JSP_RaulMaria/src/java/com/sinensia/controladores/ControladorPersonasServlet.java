@@ -76,8 +76,8 @@ public class ControladorPersonasServlet extends HttpServlet {
             }
         }else if(metodo.equals("cambiar")){
             try{
-                
-                ServicioPersona.getInstancia().modificarPersona(nuevoNombre,nuevoEdad,nuevoEmail,nuevoPassword,nombre);
+               
+               Persona p = ServicioPersona.getInstancia().modificarPersona(nuevoNombre,nuevoEdad,nuevoEmail,nuevoPassword,nombre);
             }catch(Exception w){}
         }
     }

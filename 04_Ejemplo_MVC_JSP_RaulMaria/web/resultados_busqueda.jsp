@@ -19,7 +19,7 @@
         <% if(pers != null){ %>
             <label for="nombre">Nombre: </label>
             <input id="nombre" readonly value="<%= pers.getNombre() %>"/>
-            <label for="edad">Nombre: </label>
+            <label for="edad">Edad: </label>
             <input id="edad" readonly value="<%= pers.getEdad() %>"/>
         <% }else{ %>
             <span style="color: red">
