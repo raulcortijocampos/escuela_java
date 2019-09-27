@@ -27,10 +27,10 @@ public class ControladorPersonasServlet extends HttpServlet {
         Persona p = ServicioPersona.getInstancia().getPersona(nombre);
         
         String metodo = request.getParameter("queHacer");
-        if(metodo.equals("cambiar")){
+        if(metodo.equals("irAModificar")){
             request.getSession().setAttribute("modificarPers", p);
             request.getRequestDispatcher("modificarPersona.jsp").forward(request, response);
-        }else if(metodo.equals("buscar"))
+        }else if(metodo.equals("irABuscar"))
             request.getSession().setAttribute("resultadoBusq", p);
             request.getRequestDispatcher("resultados_busqueda.jsp").forward(request, response);
     }
@@ -51,6 +51,11 @@ public class ControladorPersonasServlet extends HttpServlet {
         String password = request.getParameter("password"); 
         String metodo = request.getParameter("queHacer");
         String viejoNombre = request.getParameter("viejoNombre");
+        String nuevoNombre = request.getParameter("nuevoNombre");
+        String nuevoEdad = request.getParameter("nuevoEdad");
+        String nuevoEmail = request.getParameter("nuevoEmail"); 
+        String nuevoPassword = request.getParameter("nuevoPassword"); 
+        
         if(metodo.equals("add")){
             try{
                 Persona p = ServicioPersona.getInstancia().addPersonas(nombre, edad,email,password);
@@ -71,7 +76,8 @@ public class ControladorPersonasServlet extends HttpServlet {
             }
         }else if(metodo.equals("cambiar")){
             try{
-                ServicioPersona.getInstancia().modificarPersona(nombre,edad,email,password,viejoNombre);
+                
+                ServicioPersona.getInstancia().modificarPersona(nuevoNombre,nuevoEdad,nuevoEmail,nuevoPassword,nombre);
             }catch(Exception w){}
         }
     }

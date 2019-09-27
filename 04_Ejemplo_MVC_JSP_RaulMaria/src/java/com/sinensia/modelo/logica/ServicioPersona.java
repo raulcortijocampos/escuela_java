@@ -50,10 +50,16 @@ public class ServicioPersona {
                 }
             }
           }
-    public void modificarPersona(String nuevoNombre,String edad,String email,String password, String viejoNombre){
+    public void modificarPersona(String nuevoNombre,String nuevaEdad,String nuevoEmail,String nuevoPassword, String viejoNombre){
         Persona p = getPersona(viejoNombre);
-        if(!p.getNombre().equals((getPersona(viejoNombre)).getNombre())){
+        if(!nuevoNombre.equals(viejoNombre)){
             p.setNombre(nuevoNombre);
+        }else if(p.getEdad() != Integer.parseInt(nuevaEdad)){
+            p.setEdad(Integer.parseInt(nuevaEdad));
+        }else if(!p.getEmail().equals(nuevoEmail) ){
+            p.setEmail(nuevoEmail);
+        }else if(!p.getPassword().equals(nuevoPassword)){
+            p.setPassword(nuevoPassword);
         }
     }
             
