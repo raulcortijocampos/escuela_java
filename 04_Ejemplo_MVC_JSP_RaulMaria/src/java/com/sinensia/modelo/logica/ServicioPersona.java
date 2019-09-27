@@ -50,6 +50,12 @@ public class ServicioPersona {
                 }
             }
           }
+    public void modificarPersona(String nuevoNombre,String edad,String email,String password, String viejoNombre){
+        Persona p = getPersona(viejoNombre);
+        if(!p.getNombre().equals((getPersona(viejoNombre)).getNombre())){
+            p.setNombre(nuevoNombre);
+        }
+    }
             
      public Persona getPersona(String nombre){
         for(Persona p : personas){

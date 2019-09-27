@@ -29,6 +29,7 @@
                 </tr>
             </table>
             <input type='submit' value='Enviar'/>
+            <input type='hidden' name="queHacer" id="queHacer" value='add'/>
         </form>
         
         <h2>Buscar persona</h2>
@@ -38,12 +39,21 @@
                     <td>Nombre</td>
                     <td><input type='text' name='nombre' id='nombre'/></td>
                 </tr>
+            </table>
+            <input type='submit' value='Enviar'/>
+            <input type='hidden' name="queHacer" id="queHacer" value=''/>
+        </form>
+        
+        <h2>Modificar Persona</h2>
+        <form name='formMod' method='get' action='./personas.do'> <!--metodo get-->
+            <table border='1'>
                 <tr>
-                    <td>Edad</td>
-                    <td> <input type='number' name='edad' id='edad'/></td>
+                    <td>Nombre</td>
+                    <td><input type='text' name='viejoNombre' id='viejoNombre'/></td>
                 </tr>
             </table>
             <input type='submit' value='Enviar'/>
+            <input type='hidden' name="queHacer" id="queHacer" value=''/>
         </form>
     </body>
 </html>
