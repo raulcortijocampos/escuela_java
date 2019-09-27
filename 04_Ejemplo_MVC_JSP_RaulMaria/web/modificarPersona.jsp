@@ -15,7 +15,7 @@
     <body>
         <h1>Modificar persona</h1>
         <h1><%=request.getParameter("nombre")%></h1>
-        <% Persona pers = (Persona) session.getAttribute("modificarPersona"); %>
+        <% Persona pers = (Persona) session.getAttribute("modificarPers"); %>
         <% if(pers != null){ %>
             <label for="nombre">Nombre: </label>
             <input id="nombre" readonly value="<%= pers.getNombre() %>"/>

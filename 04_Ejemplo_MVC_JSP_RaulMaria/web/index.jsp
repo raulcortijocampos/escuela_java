@@ -41,7 +41,7 @@
                 </tr>
             </table>
             <input type='submit' value='Enviar'/>
-            <input type='hidden' name="queHacer" id="queHacer" value=''/>
+            <input type='hidden' name="queHacer" id="queHacer" value='buscar'/>
         </form>
         
         <h2>Modificar Persona</h2>
@@ -49,11 +49,11 @@
             <table border='1'>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type='text' name='viejoNombre' id='viejoNombre'/></td>
+                    <td><input type='text' name='nombre' id='nombre'/></td>
                 </tr>
             </table>
             <input type='submit' value='Enviar'/>
-            <input type='hidden' name="queHacer" id="queHacer" value=''/>
+            <input type='hidden' name="queHacer" id="queHacer" value='cambiar'/>
         </form>
     </body>
 </html>

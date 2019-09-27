@@ -21,14 +21,18 @@ public class ControladorPersonasServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
+        String viejoNombre;
         //String edad = request.getParameter("edad");
         
         Persona p = ServicioPersona.getInstancia().getPersona(nombre);
         
-        
-        
-        request.getSession().setAttribute("modificarPersona", p);
-        request.getRequestDispatcher("modificarPersona.jsp").forward(request, response);
+        String metodo = request.getParameter("queHacer");
+        if(metodo.equals("cambiar")){
+            request.getSession().setAttribute("modificarPers", p);
+            request.getRequestDispatcher("modificarPersona.jsp").forward(request, response);
+        }else if(metodo.equals("buscar"))
+            request.getSession().setAttribute("resultadoBusq", p);
+            request.getRequestDispatcher("resultados_busqueda.jsp").forward(request, response);
     }
 
     
