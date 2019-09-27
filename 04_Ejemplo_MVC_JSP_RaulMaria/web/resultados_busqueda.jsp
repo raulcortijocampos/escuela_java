@@ -25,10 +25,12 @@
             <input id="email" readonly value="<%= pers.getEmail() %>"/>
             <label for="password">Password: </label>
             <input id="password" readonly value="<%= pers.getPassword()%>"/>
+            <a href="./"> volver al inicio </a>
         <% }else{ %>
             <span style="color: red">
                 No se han encontrado personas
             </span>
+            <a href="./"> volver al inicio </a>
          <% }%>
         
     </body>

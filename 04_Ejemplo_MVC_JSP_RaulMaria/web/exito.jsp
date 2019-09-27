@@ -25,8 +25,10 @@
                 <input readonly value="<%= request.getParameter("email") %>"/>
                 <label for="password">Password: </label>
                 <input readonly value="<%= request.getParameter("password") %>"/>
+                <a href="./"> volver al inicio </a>
         <% }else if("borrar".equals(lala)) { %>
-                 <h1>Exito - Borrado <% request.getParameter("nombre");  %></h1>
+                 <h1>Exito - Borrado <% request.getParameter("nombreABorrar");  %></h1>
+                 <a href="./"> volver al inicio </a>
         <% } %>
     </body>
 </html>
