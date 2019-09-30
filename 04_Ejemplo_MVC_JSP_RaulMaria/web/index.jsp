@@ -5,8 +5,10 @@
         <title>Ejemplo MVC con JSP y Servlets</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="estilo/estilo.jsp"/>
     </head>
     <body>
+        <div class="agarrate">
         <h1>Ejemplo MVC con JSP y Servlets</h1>
         <h2>Añadir persona</h2>
         <form name='form1' method='post' action='./personas.do'>
@@ -32,7 +34,7 @@
             <input type='hidden' name="queHacer" id="queHacer" value='add'/>
         </form>
         
-        <h2>Buscar persona</h2>
+        <h2>Buscar persona</h2><img src=""/>
         <form name='formBusq' method='get' action='./personas.do'> <!--metodo get-->
             <table border='1'>
                 <tr>
@@ -68,6 +70,7 @@
             <input type='hidden' name="nombreABorrar" id="nombreABorrar" />
             <input type='hidden' name="queHacer" id="queHacer" value='borrar'/>
         </form>
+        </div>
     <script>
          let cajaNum1 = document.getElementById("nAntiguo");
          let campoNombre=document.getElementById("nombreABorrar");
