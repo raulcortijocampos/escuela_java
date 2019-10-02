@@ -30,7 +30,7 @@
             <input id="age" name="age" type="number" placeholder="Write your edad"
                    size="10" maxlength="3" required="required" min="1" max="199"/></br>
             
-            <input type="submit" name="method" value="Register please"/>
+            <input type="submit" name="method" value="Register"/>
         </form>
     </body>
 </html>

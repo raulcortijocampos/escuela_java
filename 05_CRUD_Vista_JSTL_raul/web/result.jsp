@@ -15,11 +15,23 @@
     <body>
         <h1>Result</h1>
         <a href="index.html">Inicio</a>
-        <c:catch var="excepcion">
-            <jsp:useBean id="user" type="sinensia.modelo.User" scope="session">
+        <c:catch var="exception">
+            <jsp:useBean id="user" type="sinensia.modelo.User" scope="request">
                 <jsp:getProperty property="*" name="user"/>
             </jsp:useBean>
-            
+            Usuario creado: ${user.email}
         </c:catch>
+        <c:if test="${not empty exception}">
+            <c:if test="$param.method != null}">
+                <p>Result ok</p>
+            </c:if>
+            <c:if test="$param.method == null}">    
+                 <p>Error on register</p>
+            </c:if>
+        </c:if>
+        <c:if test="${requestScope.errorMessage != null}">
+            <h3 style="color: orange"> ${requestScope.errorMessage}</h3>
+            <c:remove var="errorMessage" scope="request"/>
+        </c:if>
     </body>
 </html>

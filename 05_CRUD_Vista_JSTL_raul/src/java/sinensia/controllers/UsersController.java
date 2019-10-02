@@ -46,15 +46,19 @@ public class UsersController extends HttpServlet{
                 case "Delete":
                     userSrv.remove(Integer.parseInt(id));
                 break;
+                case "Register":
+                    User newUser = userSrv.create(email, password, name, age);
+                    req.setAttribute("user", newUser);
+                break;
                 default:
-                    userSrv.create(email, password, name, age);
+                    
                 break;
             }
-            
-            
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(UsersController.class.getName()).log(Level.SEVERE, null, ex);
+            req.setAttribute("errorMessage", ex.getMessage());
         }
+        req.getRequestDispatcher("result.jsp").forward(req, resp);
     }
 
     @Override
