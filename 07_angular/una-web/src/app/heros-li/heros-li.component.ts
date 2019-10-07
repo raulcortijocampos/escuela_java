@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HEROES } from '../model/array-heros';
+// import { HEROES } from '../model/array-heros';
 import { Hero } from '../model/hero';
-
+import { HeroService } from '../hero.service';
 
 
 @Component({
@@ -11,11 +11,21 @@ import { Hero } from '../model/hero';
 })
 export class HerosLiComponent implements OnInit {
    heroes: Hero[];
+  selectedHero: Hero;
 
-  constructor() { }
+  constructor(private heroSrv: HeroService) { }
 
   ngOnInit() {
-    this.heroes = HEROES;
+   // this.heroes = HEROES;
+   this.getHeroesFromService();
+  }
+
+  onSelect(hero: Hero): void{
+    this.selectedHero = hero;
+  }
+
+  getHeroesFromService(): void{
+    this.heroes = this.heroSrv.getHeroes();
   }
 
 }
