@@ -1,13 +1,9 @@
-
-<h1>Añadir heroe</h1>
-
-    <!-- <input [(ngModel)]="idHeroe" placeholder="Write the id"/>-->
-    <label for="name">Name:</label>
-    <input [(ngModel)]="nombreHeroe" placeholder="Write the name"/><br/>
-   <!-- <input id="name" placeholder="Write the name"/>-->
-   <label for="id">Ruta:</label>
-    <input id="ruta" [(ngModel)]="nombreRuta" placeholder="Write the ruta"/><br/>
-   <!-- <button (click)="heroSrv.addHero(idHeroe, nombreHeroe,'../assets/images/ironMan.jpg')">Crear</button>-->
-    <button (click)="heroSrv.addHero(nombreHeroe,'../assets/images/ironMan.jpg')">Crear</button>
-    
-
+<h2>Create new Hero: </h2>
+<label for="id">Id:</label>
+<input id="id" type="number" [(ngModel)] = "newHero.id"/><br/>
+<label for="name">Name:</label>
+<input id="name" type="text" [(ngModel)] = "newHero.name"/><br/>
+<label for="file">Image src:</label>
+<input type="text" [(ngModel)] = "newHero.file"/><br/>
+<input type="button" value="Add new hero" 
+    (click)="createHero()"/>

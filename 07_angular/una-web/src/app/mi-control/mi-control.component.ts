@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../model/hero';
+import { Hero } from '../model/hero';
 
 @Component({
   selector: 'app-mi-control',
@@ -7,15 +7,16 @@ import {Hero} from '../model/hero';
   styleUrls: ['./mi-control.component.css']
 })
 export class MiControlComponent implements OnInit {
+
   static contIds: number = 0;
-  propiedadHola = 'Vamos a comer ya';
+  propiedadHola = 'Vamos a tomar unas cañas!';
   hero: Hero = {
     id: 1,
     name: 'Iron Man',
-    imagen: ' '
+    file: ''
   };
 
-  constructor() { 
+  constructor() {
     MiControlComponent.contIds++;
     this.hero.id = MiControlComponent.contIds;
   }

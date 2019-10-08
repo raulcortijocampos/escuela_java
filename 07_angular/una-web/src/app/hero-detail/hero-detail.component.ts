@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Location } from '@angular/common';
 import { Hero } from '../model/hero';
+
+import { Location }  from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
 
@@ -11,20 +12,19 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
 
-  //Esta propiedad viene de algun componente externo
-  @Input()  hero: Hero;
+  // Esta propiedad viene de algún componente externo
+  @Input() hero: Hero;
 
-  constructor(private route: ActivatedRoute,
-            private heroSrv: HeroService,
-            private location: Location) { }
+  constructor(private route: ActivatedRoute, 
+              private heroSrv: HeroService,
+              private location: Location ) { }
 
   ngOnInit() {
     this.getHero();
   }
-  getHero(): void{
-    //Cogemos el id del parametro de la url  /detail/:id
-    const id = this.route.snapshot.paramMap.get('id');
+  getHero(): void {
+    // Cogemos el id del parámetro de la url   /detail/:id
+    const id = this.route.snapshot.paramMap.get('id');  
     this.hero = this.heroSrv.getHero(parseInt(id));
   }
-
 }

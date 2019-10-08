@@ -3,29 +3,25 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../model/hero';
 import { HeroService } from '../hero.service';
 
-
 @Component({
-  selector: 'app-heros-li',
-  templateUrl: './heros-li.component.html',
-  styleUrls: ['./heros-li.component.css']
+  selector: 'app-heros-list',
+  templateUrl: './heros-list.component.html',
+  styleUrls: ['./heros-list.component.css']
 })
-export class HerosLiComponent implements OnInit {
-   heroes: Hero[];
+export class HerosListComponent implements OnInit {
+  heroes: Hero[];
   selectedHero: Hero;
-
+ 
   constructor(private heroSrv: HeroService) { }
 
   ngOnInit() {
-   // this.heroes = HEROES;
-   this.getHeroesFromService();
+    // this.heroes = HEROES;
+    this.getHeroesFromService();
   }
-
-  onSelect(hero: Hero): void{
+  onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-
-  getHeroesFromService(): void{
+  getHeroesFromService(): void {
     this.heroes = this.heroSrv.getHeroes();
   }
-
 }

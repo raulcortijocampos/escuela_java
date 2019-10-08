@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
+import { Hero } from '../model/hero';
 
 @Component({
   selector: 'app-new-hero',
@@ -8,11 +9,16 @@ import { HeroService } from '../hero.service';
 })
 export class NewHeroComponent implements OnInit {
 
-  constructor( private heroSrv: HeroService) { }
+  newHero: Hero;
 
-  
+  constructor(private heroSrv: HeroService) { }
 
   ngOnInit() {
+    this.newHero = new Hero();
   }
-
+  createHero(): void {
+    this.heroSrv.add(this.newHero);
+    // Crear uno nuevo para la siguiente vez
+    this.newHero = new Hero();
+  }
 }
