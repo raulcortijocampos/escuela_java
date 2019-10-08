@@ -1,12 +1,16 @@
 <h1>Una web</h1>
 <h2>{{title}}</h2>
-<div>
-  <app-mi-control></app-mi-control>
-</div>
 
-<div>
-  <app-heros-li></app-heros-li>
-</div>
-<app-messages></app-messages>
+<nav>
+    <a routerLink="/dashboard">Home!</a><br/>
+  <a routerLink="/heroes">Show listt!</a><br/>
+  <a routerLink="/newHero">Add new hero!</a>
+</nav>
+<router-outlet></router-outlet>
+<!--
+<div><app-mi-control></app-mi-control></div>
+<div> <app-heros-li></app-heros-li></div>
 <app-new-hero></app-new-hero>
+-->
+<app-messages></app-messages>
 
