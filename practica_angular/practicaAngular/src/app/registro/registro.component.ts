@@ -8,19 +8,31 @@ import { ServicioUsuariosService } from '../servicio-usuarios.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
+  personasRecibidas: Persona[] ; //= new Array();
   newPersona: Persona;
   constructor(private perSrv: ServicioUsuariosService) { }
 
-  ngOnInit() {
-    this.newPersona = new Persona();
-  }
+
   registrar(): void {
     
     this.perSrv.add(this.newPersona).subscribe();
+ 
     alert("registrado con exito");
+    this.personasRecibidas.push(this.newPersona);
     // Crear uno nuevo para la siguiente vez
     this.newPersona = new Persona();
+    
   }
+  
+  ngOnInit() {
+    
+    this.newPersona = new Persona();
+    /*
+    this.perSrv.getPersonaObservable().subscribe(
+      personasRec =>{ 
+        this.personasRecibidas = personasRec;
+      }
+      
+    )*/}
 
 }

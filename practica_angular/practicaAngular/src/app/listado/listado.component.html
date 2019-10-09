@@ -1,10 +1,10 @@
 <h2>Listado de personas</h2>
 
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
-
+<app-persona-detalle [persona] = "personaSeleccionada"></app-persona-detalle>
 <ul>
-    <li *ngFor = "let persona of listaPersona">
-        <span>lalalala</span>
-        <span>{{ persona.name }} </span> {{ persona.email }}
-    </li>
+    <li *ngFor = "let persona of personasRecibidas">
+        <span>{{ persona.id }} {{ persona.name }}  {{ persona.email }}</span>
+        <a (click)="personaSeleccionada = persona">(+)</a>
+     </li>
 </ul>
