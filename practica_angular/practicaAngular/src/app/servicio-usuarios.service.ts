@@ -32,21 +32,18 @@ export class ServicioUsuariosService {
 add(newPersona: Persona): Observable<Persona> {
    return this.httpCli.post<Persona>(this.urlApiRest, newPersona, this.httpOptions);
   }
-  /*
+  
 delete(newPersona: Persona): Observable<Persona>{
   this.httpOptions['body']={
-    id:newPersona.id;
+    id:newPersona.id
   };
-}*/
-    
+    return this.httpCli.delete<Persona>(this.urlApiRest, this.httpOptions);
+  }
+
+  
   modificar(personaModificar: Persona): Observable<Persona>{
     return this.httpCli.put<Persona>(this.urlApiRest, personaModificar, this.httpOptions);
   }
-  /*
-  getUnaPersona(): Persona{
-   let personaEncontrada = this.personasRecibidas.find( personaEncontrada=> persona.id === id );
-    return personaEncontrada;
-  }
-  */
+ 
 
 }

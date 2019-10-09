@@ -4,9 +4,9 @@
     <label>Email:</label>
     <input type="email" name="email" id="email" [(ngModel)] ="persona.email" value="{{ persona.email }}"/><br/>
     <label>Nombre:</label>
-    <input type="text" name="name" id="name" [(ngModel)] = "persona.password" value="{{ persona.name }}"/><br/>
+    <input type="text" name="name" id="name" [(ngModel)] = "persona.name" value="{{ persona.name }}"/><br/>
     <label>Password:</label>
-    <input type="password" name="password" id="password" [(ngModel)] = "persona.name" value="{{ persona.password }}"/><br/>
+    <input type="password" name="password" id="password" [(ngModel)] = "persona.password" value="{{ persona.password }}"/><br/>
     <label>Edad:</label>
     <input type="text" name="age" id="age" [(ngModel)] = "persona.age" value="{{ persona.age }}"/>
     <input type="button" value="Modificar" (click)="modificaar(persona)"/>

@@ -28,7 +28,7 @@ export class PersonaDetalleComponent implements OnInit {
   // };
 
    modificaar(persona){
-    this.perSrv.modificar(persona).subscribe();;
+    this.perSrv.modificar(persona).subscribe();
     
    }
    

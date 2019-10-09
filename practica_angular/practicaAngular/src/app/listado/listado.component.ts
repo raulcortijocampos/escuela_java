@@ -12,6 +12,7 @@ export class ListadoComponent implements OnInit {
   personasRecibidas: Persona[];
   listaPersona: Persona[];
   personaSeleccionada: Persona;
+  personaEliminar:Persona;
 
   constructor(private perSrv: ServicioUsuariosService) {
 
@@ -19,7 +20,6 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit() {
     let observArrayPersonas: Observable<Persona[]>;
-    //observArrayPersonas = this.perSrv.getHeroesDonde();
     this.personasRecibidas = [];
     this.perSrv.getPersonaObservable().subscribe(personasRec =>{ 
       this.personasRecibidas = personasRec
@@ -33,9 +33,17 @@ export class ListadoComponent implements OnInit {
     this.listaPersona = this.perSrv.getPersonasLista();
   }
 
+  eliminar(personaEliminar){
+    alert("vas a eliminar a " + personaEliminar.name)
+      this.perSrv.delete(personaEliminar).subscribe();
+      this.ngOnInit();
+  }
 
+/*
   getUnaPersona(id: number): Persona{
     let personaEncontrada = this.personasRecibidas.find( personaEncontrada=> personaEncontrada.id === id );
      return personaEncontrada;
-   }
+   }*/
+
+   
 }
