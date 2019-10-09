@@ -1,11 +1,15 @@
 <h2>Listado de personas</h2>
 
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+<div>
 <app-persona-detalle [persona] = "personaSeleccionada"></app-persona-detalle>
+
+
+</div>
 <ul>
     <li *ngFor = "let persona of personasRecibidas">
         <span>Id: {{ persona.id }} | Nombre: {{ persona.name }} | email: {{ persona.email }} | Edad: {{ persona.age }}</span>
-        <a (click)="personaSeleccionada = persona">(+)</a>
+        <a (click)="personaSeleccionada = persona">Modificar</a>
         <a (click)="eliminar(persona)">Delete</a>
      </li>
 </ul>

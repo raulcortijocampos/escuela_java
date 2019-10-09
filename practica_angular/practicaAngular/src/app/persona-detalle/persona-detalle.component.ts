@@ -27,7 +27,7 @@ export class PersonaDetalleComponent implements OnInit {
   //   let Lala = listaP.getUnaPersona(2);
   // };
 
-   modificaar(persona){
+  modificaar(persona){
     this.perSrv.modificar(persona).subscribe();
     
    }

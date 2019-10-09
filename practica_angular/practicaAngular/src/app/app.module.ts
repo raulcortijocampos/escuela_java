@@ -10,6 +10,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { ListadoComponent } from './listado/listado.component';
 import { PersonaDetalleComponent } from './persona-detalle/persona-detalle.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { PersonaDetalleComponent } from './persona-detalle/persona-detalle.compo
     RegistroComponent,
     MensajesComponent,
     ListadoComponent,
-    PersonaDetalleComponent
+    PersonaDetalleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

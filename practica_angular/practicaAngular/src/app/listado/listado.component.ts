@@ -38,6 +38,7 @@ export class ListadoComponent implements OnInit {
       this.perSrv.delete(personaEliminar).subscribe();
       this.ngOnInit();
   }
+  
 
 /*
   getUnaPersona(id: number): Persona{
