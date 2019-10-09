@@ -12,7 +12,7 @@ export class ListadoComponent implements OnInit {
   personasRecibidas: Persona[];
   listaPersona: Persona[];
   personaSeleccionada: Persona;
-  
+
   constructor(private perSrv: ServicioUsuariosService) {
 
    }
@@ -33,8 +33,6 @@ export class ListadoComponent implements OnInit {
     this.listaPersona = this.perSrv.getPersonasLista();
   }
 
-  modificar(){
-  }
 
   getUnaPersona(id: number): Persona{
     let personaEncontrada = this.personasRecibidas.find( personaEncontrada=> personaEncontrada.id === id );

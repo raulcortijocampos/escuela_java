@@ -20,7 +20,7 @@ constructor(private httpCli: HttpClient) {
                                 // El array. Inmediatamente emite el 
                                 // evento de que ya tiene el array.
   }*/
-  getHeroes() : Observable<Hero[]> {
+  getHeroesDonde() : Observable<Hero[]> {
     let observResp:Observable<Hero[]>;
     observResp = this.httpCli.get<Hero[]>(this.urlApiRest);
     // Aquí no definimos las callback, mejor que las defina 

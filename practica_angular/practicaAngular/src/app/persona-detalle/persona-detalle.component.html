@@ -9,5 +9,5 @@
     <input type="password" name="password" id="password" [(ngModel)] = "persona.name" value="{{ persona.password }}"/><br/>
     <label>Edad:</label>
     <input type="text" name="age" id="age" [(ngModel)] = "persona.age" value="{{ persona.age }}"/>
-    <input type="button" value="Modificar" (click)="modificaar()"/>
+    <input type="button" value="Modificar" (click)="modificaar(persona)"/>
 </DIV>

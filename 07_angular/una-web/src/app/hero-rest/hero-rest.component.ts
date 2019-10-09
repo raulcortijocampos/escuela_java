@@ -33,7 +33,7 @@ export class HeroRestComponent implements OnInit {
   ngOnInit() {
     console.log(" 1 - Empezamos a pedir los datos");
     let observArrayHeroes: Observable<Hero[]>;
-    observArrayHeroes = this.heroRestSrv.getHeroes();
+    observArrayHeroes = this.heroRestSrv.getHeroesDonde();
     // La ejecución continúa hasta que el array es recibido. 
     // Para recibirlo asincronamente nos suscribimos al Observable
     let funcionAvisameCuandoLoTengas = (heroesRec) => {

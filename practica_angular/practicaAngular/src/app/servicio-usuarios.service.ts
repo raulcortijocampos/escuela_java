@@ -32,10 +32,15 @@ export class ServicioUsuariosService {
 add(newPersona: Persona): Observable<Persona> {
    return this.httpCli.post<Persona>(this.urlApiRest, newPersona, this.httpOptions);
   }
-
+  /*
+delete(newPersona: Persona): Observable<Persona>{
+  this.httpOptions['body']={
+    id:newPersona.id;
+  };
+}*/
     
-  modificar(personaModificar: Persona): void{
-    this.httpCli.put<Persona>(this.urlApiRest, personaModificar, this.httpOptions);
+  modificar(personaModificar: Persona): Observable<Persona>{
+    return this.httpCli.put<Persona>(this.urlApiRest, personaModificar, this.httpOptions);
   }
   /*
   getUnaPersona(): Persona{

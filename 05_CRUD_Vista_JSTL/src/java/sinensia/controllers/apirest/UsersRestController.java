@@ -98,6 +98,7 @@ public class UsersRestController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        setAccesControlHeaders(resp);
         try {
             String jsonUser = req.getReader().readLine();
             User userObject = new Gson().fromJson(jsonUser, User.class);
@@ -112,6 +113,7 @@ public class UsersRestController extends HttpServlet {
     
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        setAccesControlHeaders(resp);
         String jsonUser = req.getReader().readLine();
         User userObject = new Gson().fromJson(jsonUser, User.class);
         try { // Debe venir ya con el id
