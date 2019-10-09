@@ -1,6 +1,6 @@
 <h1>Registrar Nuevo Usuario</h1>
-<input type=email name="email" id="email" placeholder="email"/>
-<input type=password name="password" id="password" placeholder="password"/>
-<input type=text name="nombre" id="nombre" placeholder="Nombre"/>
-<input type=text name="edad" id="edad" placeholder="edad"/>
+<input type=email name="email" id="email" [(ngModel)] = "newPersona.email" placeholder="email"/>
+<input type=password name="password" id="password" [(ngModel)] = "newPersona.password" placeholder="password"/>
+<input type=text name="name" id="name" [(ngModel)] = "newPersona.name"placeholder="Nombre"/>
+<input type=text name="age" id="age" [(ngModel)] = "newPersona.age" placeholder="edad"/>
 <input type="button" value="Registrar" (click)="registrar()"/>

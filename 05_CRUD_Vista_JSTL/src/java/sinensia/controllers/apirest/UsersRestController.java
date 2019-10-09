@@ -45,6 +45,8 @@ public class UsersRestController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json;charset=UTF-8");
+        
+        setAccesControlHeaders(resp);
 
         try {
             List<User> usersList = userSrv.getAll();
@@ -63,6 +65,9 @@ public class UsersRestController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        
+        setAccesControlHeaders(resp);
+        
         //Recicir el JSON como parámetro de FORMulario
         //String jsonUser = req.getParameter("json");
         BufferedReader bufRead = req.getReader();
@@ -116,6 +121,19 @@ public class UsersRestController extends HttpServlet {
         }
         resp.setContentType("application/json;charset=UTF-8");
         resp.getWriter().print(new Gson().toJson(userObject));
+    }
+    
+    @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        setAccesControlHeaders(resp);
+        resp.setStatus(HttpServletResponse.SC_OK);
+    }
+    
+    private void setAccesControlHeaders(HttpServletResponse resp){
+        resp.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+        resp.setHeader("Access-Control-Allow-Methods", "OPTIONS, HEAD, GET, PUT, POST, DELETE");
+        resp.setHeader("Access-Control-Allow-Headers", "X-PINGOTHER, Origin, X-Request-With, Content-Type, Accept");
+        resp.addHeader("Access-Control-Max-Age", "1728000"); //28 dias
     }
 
 }
